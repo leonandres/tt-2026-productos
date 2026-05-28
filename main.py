@@ -8,7 +8,17 @@ def menu():
     print("5 - Salir")
 
 def agregar_producto():
-    print ("Agregar nuevo producto.")
+    print ("====Agregar nuevo producto====")
+    print("Ingrese el nombre del producto: ")
+    nombre = input()
+    print("Ingrese el precio del producto: ")
+    precio = float(input())
+
+    producto = {
+        "nombre": nombre,
+        "precio": precio
+    }
+    productos.append(producto)
 
 def mostrar_productos():
     print("Mostrar productos.")
@@ -36,7 +46,6 @@ while True:
         break
     else:
         print("Operación no válida. Intente nuevamente.")
-        break
 
 
 
