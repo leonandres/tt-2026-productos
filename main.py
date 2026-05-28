@@ -8,7 +8,7 @@ def menu():
     print("5 - Salir")
 
 def agregar_producto():
-    print ("====Agregar nuevo producto====")
+    print ("==== Agregar nuevo producto ====")
     print("Ingrese el nombre del producto: ")
     nombre = input()
     print("Ingrese el precio del producto: ")
@@ -21,7 +21,9 @@ def agregar_producto():
     productos.append(producto)
 
 def mostrar_productos():
-    print("Mostrar productos.")
+    print("==== Mostrar productos ====")
+    for producto in productos:
+        print (f"Nombre: {producto['nombre']}, Precio: {producto['precio']}")
 
 def buscar_producto():
     print("Buscar producto")
