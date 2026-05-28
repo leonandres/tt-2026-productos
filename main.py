@@ -26,7 +26,7 @@ def mostrar_productos():
         print (f"Nombre: {producto['nombre']}, Precio: {producto['precio']}")
 
 def buscar_producto():
-    print("====Buscar producto ====")
+    print("==== Buscar producto ====")
     print("Ingrese el nombre del producto a buscar: ")
     nombre = input()
     for producto in productos:
@@ -36,7 +36,15 @@ def buscar_producto():
     print("Producto no encontrado.")
 
 def eliminar_producto():
-    print("Eliminar producto")
+    print("==== Eliminar producto ====")
+    print("Ingrese el nombre del producto a eliminar: ")
+    nombre_producto_a_eliminar = input()
+    for producto in productos:
+        if producto ["nombre"] == nombre_producto_a_eliminar:
+            productos.remove(producto)
+            print("Producto eliminado.")
+            return
+    print("Producto no encontrado.")
 
 while True:
     menu()
