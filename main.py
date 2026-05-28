@@ -10,9 +10,18 @@ def menu():
 def agregar_producto():
     print ("==== Agregar nuevo producto ====")
     print("Ingrese el nombre del producto: ")
-    nombre = input()
+    nombre = input().strip()
+    
+    if nombre == "":
+        print("Error: El nombre del producto no puede estar vacío.")
+        return 
+    
     print("Ingrese el precio del producto: ")
-    precio = float(input())
+    try:
+        precio = float(input())
+    except ValueError:
+        print("Error: El precio debe ser un número válido.")
+        return
 
     producto = {
         "nombre": nombre,
@@ -28,7 +37,7 @@ def mostrar_productos():
 def buscar_producto():
     print("==== Buscar producto ====")
     print("Ingrese el nombre del producto a buscar: ")
-    nombre = input().lower()
+    nombre = input().strip().lower()
     for producto in productos:
         if producto["nombre"].lower() == nombre:
             print (f"Nombre: {producto['nombre']}, Precio: {producto['precio']}")
@@ -38,7 +47,7 @@ def buscar_producto():
 def eliminar_producto():
     print("==== Eliminar producto ====")
     print("Ingrese el nombre del producto a eliminar: ")
-    nombre_producto_a_eliminar = input().lower()
+    nombre_producto_a_eliminar = input().strip().lower()
     for producto in productos:
         if producto ["nombre"].lower() == nombre_producto_a_eliminar:
             productos.remove(producto)
@@ -63,6 +72,3 @@ while True:
         break
     else:
         print("Operación no válida. Intente nuevamente.")
-
-
-
