@@ -1,7 +1,7 @@
 productos = []
 
 def menu():
-    print("1 - Agregar producto")
+    print("\n1 - Agregar producto")
     print("2 - Mostrar productos")
     print("3 - Buscar producto")
     print("4 - Eliminar producto")
