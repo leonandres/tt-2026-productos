@@ -1,5 +1,5 @@
 def menu():
-    print("==== Menú de opciones ====")
+    print("\033[1;36m==== Menú de opciones ====\033[0m")
     print("1 - Agregar producto")
     print("2 - Mostrar productos")
     print("3 - Buscar producto")
@@ -21,9 +21,20 @@ def agregar_producto():
     if precio.strip() == "":
         print("Error: El precio del producto no puede estar vacío.")
         return
-    else:
-        with open("productos.txt", "a") as productos:
-            productos.write(f"{nombre},{categoria},{precio}\n")
+
+    with open("productos.txt", "a") as productos:
+        productos.write(f"{nombre},{categoria},{precio}\n")
+
+def mostrar_productos():
+    try:
+        with open("productos.txt","r") as productos:
+            print("==== Mostrar productos ====")
+            for producto in productos:
+                nombre, categoria, precio = producto.strip().split(",")
+                print(f"Nombre: {nombre}, Categoría: {categoria}, Precio: {precio}")
+
+    except FileNotFoundError:
+        print("No hay productos registrados.")
 
 while True:
     menu()
@@ -37,4 +48,5 @@ while True:
 
     if operacion_int == 1:
         agregar_producto()
-
+    elif operacion_int == 2:
+        mostrar_productos()
