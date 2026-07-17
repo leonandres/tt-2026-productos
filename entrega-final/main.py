@@ -36,6 +36,29 @@ def mostrar_productos():
     except FileNotFoundError:
         print("No hay productos registrados.")
 
+
+def buscar_producto():
+    print("==== Buscar producto ====")
+    nombre_buscar = input("Ingrese el nombre del producto a buscar:")
+    if nombre_buscar.strip() == "":
+        print("Error: El nombre del producto no puede estar vacío.")
+        return
+
+    try:
+        with open("productos.txt","r") as productos:
+            encontrado = False
+            for producto in productos:
+                nombre, categoria, precio = producto.strip().split(",")
+                if nombre.lower() == nombre_buscar.lower():
+                    print(f"Producto encontrado: Nombre: {nombre}, Categoría: {categoria}, Precio: {precio}")
+                    encontrado = True
+                    break
+            if not encontrado:
+                print("Producto no encontrado.")
+
+    except FileNotFoundError:
+        print("No hay productos registrados.")
+
 while True:
     menu()
     operacion = input("Seleccione una operación:")
@@ -50,3 +73,6 @@ while True:
         agregar_producto()
     elif operacion_int == 2:
         mostrar_productos()
+    elif operacion_int == 3:
+        buscar_producto()
+    
