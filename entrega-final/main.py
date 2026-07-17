@@ -3,21 +3,20 @@ def menu():
     print("1 - Agregar producto")
     print("2 - Mostrar productos")
     print("3 - Buscar producto")
-    print("4 - Eliminar producto")
-    print("5 - Salir")
+    print("4 - Salir")
 
 def agregar_producto():
     print("==== Agregar nuevo producto ====")
 
-    nombre = input("Ingrese el nombre del producto:")
+    nombre = input("Ingrese el nombre del producto: ")
     if nombre.strip() == "":
         print("Error: El nombre del producto no puede estar vacío.")
         return
-    categoria = input("Ingrese la categoría del producto:")
+    categoria = input("Ingrese la categoría del producto: ")
     if categoria.strip() == "":
         print("Error: La categoría del producto no puede estar vacía.")
         return
-    precio = input("Ingrese el precio del producto:")
+    precio = input("Ingrese el precio del producto: ")
     if precio.strip() == "":
         print("Error: El precio del producto no puede estar vacío.")
         return
@@ -39,7 +38,7 @@ def mostrar_productos():
 
 def buscar_producto():
     print("==== Buscar producto ====")
-    nombre_buscar = input("Ingrese el nombre del producto a buscar:")
+    nombre_buscar = input("Ingrese el nombre del producto a buscar: ")
     if nombre_buscar.strip() == "":
         print("Error: El nombre del producto no puede estar vacío.")
         return
@@ -61,7 +60,7 @@ def buscar_producto():
 
 while True:
     menu()
-    operacion = input("Seleccione una operación:")
+    operacion = input("Seleccione una operación: ")
 
     if not operacion.isdigit():
         print("Error: la operación debe ser un número entre 1 y 5.")
@@ -75,4 +74,6 @@ while True:
         mostrar_productos()
     elif operacion_int == 3:
         buscar_producto()
-    
+    elif operacion_int == 4:
+        print("==== Saliendo del programa. Vuelva prontos. ====")
+        break
