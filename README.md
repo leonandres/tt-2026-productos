@@ -1,4 +1,4 @@
-# 🔹 Sistema de Gestión de Productos
+# 🔹 Sistema de gestión de productos
 
 Sistema de gestión de inventario desarrollado en Python que permite **agregar, mostrar, buscar y eliminar productos** con almacenamiento persistente en archivos de texto.
 
